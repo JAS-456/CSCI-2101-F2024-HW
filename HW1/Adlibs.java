@@ -4,8 +4,18 @@ package HW1;
 // Hint2: You will need to return a string. You can concat the int variables and the string variables together
 // Hint3: A sample story if you are lost can be as simple as "Hello! My name is ____, and I am ____, and my favorite  
 //        color is ___"
-public class Adlibs {
+public class Adlibs {  
+    public static void main(String[] args) {
+         String Story = ("Hello everyone, My name is Conner.I am 18 years old, and my favorite Color is blue");
+         System.out.println(Story);
+        
+        
+        
+
+    }
     public  String story(String name, int age, String favoriteColor) {
-        return null;
+        return null; 
+      
     }
 }
+
