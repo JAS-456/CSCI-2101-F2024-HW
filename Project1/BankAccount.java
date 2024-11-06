@@ -134,17 +134,39 @@ public class BankAccount {
 
     /*
      * Insert simpleInterest method here.
-     */
+     */ public void simpleInterest(double principal, int time, double rate) {
+    // Calculate the simple interest using the formula
+    double simpleInterest = principal * rate * time; // P * R * T
+    double roundedInterest = Math.round(simpleInterest * 100.0) / 100.0; // Round to 2 decimal places
+    double totalAmount = principal + roundedInterest; // P + simple interest
+    double roundedTotalAmount = Math.round(totalAmount * 100.0) / 100.0; // Round to 2 decimal places
 
-
+    // Print the results
+    System.out.println("Current Rate is: " + rate + "%");
+    System.out.println("Selected Time is: " + time + " years");
+    System.out.println("Simple Interest after " + time + " years is: $" + roundedInterest);
+    System.out.println("Total Amount after " + time + " years is: $" + roundedTotalAmount);
+}
+    
 
 
     /*
      * Insert transfer method here.
      */
-
-
-
+     public void transfer(double amount, BankAccount fromAccount, BankAccount toAccount) {
+    // Check if the fromAccount has enough balance to transfer
+    if (fromAccount.getBalance() >= amount) {
+        // Deduct the amount from the fromAccount
+        fromAccount.withdraw(amount);
+        // Add the amount to the toAccount
+        toAccount.deposit(amount);
+        // Print a confirmation message
+        System.out.println("Transfer of $" + amount + " from Account " + fromAccount.getAccountNumber() + " to Account " + toAccount.getAccountNumber() + " was successful.");
+    } else {
+        // Print an error message if there are insufficient funds
+        System.out.println("Transfer failed. Insufficient funds in Account " + fromAccount.getAccountNumber() + ".");
+    }
+}
 
 
 
@@ -159,9 +181,11 @@ public class BankAccount {
         System.out.println("2. Withdraw");
         System.out.println("3. Print Balance");
         System.out.println("4. Compound Interest");
-        /*
-         * Add menu options for transfer and Simple Interest
-         */
+        /* 
+         /* Add menu options for transfer and Simple Interest
+         */ 
+        System.out.println("5. Transfer");
+        System.out.println("6. Simple Interest");
         System.err.println("0. Exit");
         choice = input.nextInt(); // Collect the user's input
         return choice; // Return the user's input
@@ -196,9 +220,19 @@ public class BankAccount {
             int years = input.nextInt();
             account.compoundInterest(account.getBalance(), years, account.interestRate, account.period);
             account.printBalance();
-        /*
+        /* 
          * Add logic for transfer and Simple Interest
-         */
+         */ } else if (choice == 5) { // Transfer
+        System.out.println("Please enter the account number to transfer to: ");
+        int accountNumber = input.nextInt(); // Save the account number to transfer
+    } else if (choice == 6) { // Simple Interest
+        System.out.println("Simple Interest Calculator");
+        System.out.println("How many years? (Whole Numbers Only)");
+        int years = input.nextInt();
+        System.out.println("Enter the interest rate (as a decimal): ");
+        double rate = input.nextDouble();
+        account.simpleInterest(account.getBalance(), years, rate);
+        account.printBalance();
         } else if (choice == 0){ // Exit the program
             System.out.println("Thank you for Banking with us today. Goodbye!");
             input.close();
