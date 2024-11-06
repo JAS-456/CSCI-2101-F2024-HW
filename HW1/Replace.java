@@ -8,9 +8,20 @@ package HW1;
 // HELLO
 // 01234
 public class Replace {
+    public static void main(char[] args) {
+        String s= ("I love to ride my bike"); 
+        System.out.println(s);
+        s = s.replace("bike", "skate");
+        System.out.println(s);
+
+      
+      
+      
+    }
     public String charReplace(String s, int x, char z) {
         return null;
-        
+    
+    
     }
     
 }
