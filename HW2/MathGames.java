@@ -10,7 +10,22 @@ public class MathGames {
     // Hint 2: Math.pow and Math.sqrt are your friend here
     // Bonus points: Try to make it accept any 2 sides and return the 3rd. So it can take in
     // Hypotenuse and Perpendicular and return the base.
-    // Example 1: pythagorean(3,4) would return 5
+    // Example 1: pythagorean(3,4) would return 5   
+
+
+
+    
+
+        public static double pythagorean(double side1, double side2, boolean isHypotenuse) {
+            if (isHypotenuse) {
+                // side1 and side2 are the legs of the triangle (a and b)
+                return Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
+            } else {
+                // side1 is the hypotenuse (c), and side2 is one of the legs (a or b)
+                return Math.sqrt(Math.pow(side1, 2) - Math.pow(side2, 2));
+            }
+        }
+    
 
 
     // 2. Create a method that will calcuate my grade in the class. You can use the grade range as follows
@@ -26,6 +41,25 @@ public class MathGames {
         // Hint 3: You will probably need to use the Math.ceil() method
         // Example: grade(68) would return a D
 
+        
+
+            public static char calculateGrade(double grade) {
+            
+                int roundedGrade = (int) Math.ceil(grade);
+        
+    
+                if (roundedGrade >= 90 && roundedGrade <= 100) {
+                    return 'A';
+                } else if (roundedGrade >= 80 && roundedGrade < 90) {
+                    return 'B';
+                } else if (roundedGrade >= 70 && roundedGrade < 80) {
+                    return 'C';
+                } else if (roundedGrade >= 60 && roundedGrade < 70) {
+                    return 'D';
+                } else {
+                    return 'F';
+                }
+            }
 
 
 
@@ -40,12 +74,19 @@ public class MathGames {
     //      Hint 4: You will probably need to use the Math.ceil() method
     //      Example: tip(100, 4, 18) would return 5.0
 
-    
+        public static double calculateTipPerPerson(double totalBill, int numberOfPeople, double tipPercentage) {
+            
+            double totalTip = totalBill * (tipPercentage / 100);
+            double tipPerPerson = totalTip / numberOfPeople;
+            double roundedTipPerPerson = Math.ceil(tipPerPerson);
+            return roundedTipPerPerson;
+        }
  
 
 
     // You can either create a tester class or put your code here
-     public static void main(String[] args){
+     public static void main(String[] args){ 
         
+        System.out.println("Hypotenuse: " + "hypotenuse"); 
     }
-}
+}         

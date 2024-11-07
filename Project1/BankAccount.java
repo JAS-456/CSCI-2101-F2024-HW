@@ -119,9 +119,9 @@ public class BankAccount {
     // Hint: P can be this.balance or getBalance() if you would like to use the getter
 
     public void compoundInterest(double principal, int time, double rate, int annum ){
-        double amount = principal + Math.pow(1 + (rate/annum), annum * time); // P(1 + R/n )^(nt)
-        double roundedAmount = Math.round(amount * 100.0) / 100.0; // important for the output
-        double compInterest = amount - principal;  // A-P
+        double amount = principal + Math.pow(1 + (rate/annum), annum * time); 
+        double roundedAmount = Math.round(amount * 100.0) / 100.0; 
+        double compInterest = amount - principal; 
         compInterest = Math.round(compInterest * 100.0) / 100.0;
 
         System.out.println("Current Rate is: " + rate + "%");
@@ -136,10 +136,10 @@ public class BankAccount {
      * Insert simpleInterest method here.
      */ public void simpleInterest(double principal, int time, double rate) {
     // Calculate the simple interest using the formula
-    double simpleInterest = principal * rate * time; // P * R * T
-    double roundedInterest = Math.round(simpleInterest * 100.0) / 100.0; // Round to 2 decimal places
-    double totalAmount = principal + roundedInterest; // P + simple interest
-    double roundedTotalAmount = Math.round(totalAmount * 100.0) / 100.0; // Round to 2 decimal places
+    double simpleInterest = principal * rate * time; 
+    double roundedInterest = Math.round(simpleInterest * 100.0) / 100.0; 
+    double totalAmount = principal + roundedInterest; 
+    double roundedTotalAmount = Math.round(totalAmount * 100.0) / 100.0; 
 
     // Print the results
     System.out.println("Current Rate is: " + rate + "%");
