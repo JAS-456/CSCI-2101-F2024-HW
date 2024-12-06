@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class Loops {
 
+
+
     //NOTE: DO NOT change anything in the boiler plate
     //If I added default code it is meant to be there
     //and should not be adjusted unless otherwise noted
@@ -14,20 +16,37 @@ public class Loops {
     //loopE("eat") -> true
     //eeat -> true
     //eeeat -> true
-    //eeeeat -> false
+    //eeeeat -> false 
+
+
 
     public static boolean loopE(String str){
         return true; // <- this should be changed 
     }
+   
+    {
+        System.out.println(loopE("eat")); 
+        System.out.println(loopE("eeat")); 
+        System.out.println(loopE("eeeat")); 
+        System.out.println(loopE("eeeeat")); 
+      }
+     
 
-    //Given a String str and int n return a larger string
+    
+      
+    //Given a String str and int n return a larger string 
     //that is n copies of the original string 
     //Ex.
     //stringTimes("Code",2) ->"CodeCode"
     //stringTimes("Code",4) ->"CodeCodeCodeCode"
     public static String stringTimes(String str, int n) {
         return null; // <- this should be changed 
-    } 
+    }
+    {
+       System.out.println(stringTimes("Code", 2)); 
+       System.out.println(stringTimes("Code",4));
+    }
+  
 
     //Create a method Given a string, return the string where all of the "z"
     //Have been removed. Except do not remove a z at the start
@@ -36,10 +55,16 @@ public class Loops {
     //stringZ("zHelloz") -> "zHelloz"
     //stringZ("nozthaznks") -> "nothanks"
     //stringZ("xksiazdjaasldzsajzasdz") -> "xksiadjaasldsajasdz"
-    public static String stringZ(String str){
+    public static String stringZ(String str) {
         return null; // <- this should be changed 
     }
-
+        {
+        System.out.println(stringZ("zHelloz"));
+        System.out.println(stringZ("nozthaznks")); 
+        System.out.println(stringZ("xksiazdjaasldzsajzasdz"));
+    }
+    
+    
     //Create a method that contains a while loop that allows for
     //The user to input numbers until the number 0 is entered. Each time a number is 
     //entered the total will be summed and then prompted for a second number. 
@@ -68,9 +93,43 @@ public class Loops {
     public static void sums(){
     }
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
         // Add code to help test your methods here
-
+  }
+        public class Main {
+            public static void sums() {
+                Scanner scanner = new Scanner(System.in);
+                int total = 0;
+                int number;
+        
+                System.out.println("I will add up the numbers you give me");
+        
+                while (true) {
+                    System.out.print("Number: ");
+                    number = scanner.nextInt();
+        
+                    if (number == 0) {
+                        break;
+                    }
+        
+                    total += number;
+                    System.out.println("The total so far is " + total + ".");
+                }
+              
+                System.out.println("TOTAL ENDED --- The total is " + total + ".");
+            }
+        
+            public static void main(String[] args) {
+                sums();
+            }
+           }
     }
+
+
+
+  
+
+       
+ 
     
-}
+    
