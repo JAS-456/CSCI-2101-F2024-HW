@@ -18,6 +18,7 @@ public class Medals {
          Russia       0       1       1       2
   United States       1       1       1       3
 
+
     After that create an ARRAYLIST that is the total of each medal awarded (IE 4 gold, 4 silver, 5 bronze)
     print the total of each medal 
     Hints:
@@ -42,7 +43,26 @@ public class Medals {
           Total    Gold    Silver    Bronze   X
                       4       4       5
     */
-
+    public class MedalTable {
+        public static void main(String[] args) {
+            String[] countries = {"Canada", "China", "Germany", "Korea", "Japan", "Russia", "United States"};
+            int[][] medals = {
+                {1, 0, 1},
+                {1, 1, 0},
+                {0, 0, 1},
+                {1, 0, 0},
+                {0, 1, 1},
+                {0, 1, 1},
+                {1, 1, 1}
+            };
+            System.out.printf("%-15s %-7s %-7s %-7s %-7s%n", "Country", "Gold", "Silver", "Bronze", "Total");
+            for (int i = 0; i < countries.length; i++) {
+                int total = medals[i][0] + medals[i][1] + medals[i][2];
+                System.out.printf("%-15s %-7d %-7d %-7d %-7d%n", countries[i], medals[i][0], medals[i][1], medals[i][2], total);
+            }
+        }
+    }
+    
     public static void main(String[] args) {
         final int COUNTRIES = 7;
         final int MEDALS = 3;
@@ -87,6 +107,7 @@ public class Medals {
 
 
 
+
         // Display the total medals of each medal class
         // First create an Integer ArrayList called medalCounts 
         // your rows are counts.length
@@ -98,10 +119,41 @@ public class Medals {
         // print the Array list and chart to look like this
         // Gold    Silver    Bronze
         // 4       4         5
-     
+
+        System.out.printf("%-15s %-7s %-7s %-7s %-7s%n", "Country", "Gold", "Silver", "Bronze", "Total");
+
+        
+        for (int i = 0; i < countries.length; i++) {
+            int total = 0;
+            System.out.printf("%15s", countries[i]);
+            for (int j = 0; j < medals[i].length; j++) {
+                System.out.printf("%8d", medals[i][j]);
+                total += medals[i][j];
+            }
+            System.out.printf("%8d\n", total);
+        }
+
+       
+        ArrayList<Integer> medalCounts = new ArrayList<>();
+        
+        for (int j = 0; j < medals[0].length; j++) {
+            int sum = 0;
+            for (int i = 0; i < medals.length; i++) {
+                sum += medals[i][j];
+            }
+            medalCounts.add(sum);
+        }
+
+        System.out.printf("%-7s %-7s %-7s%n", "Gold", "Silver", "Bronze");
+        for (int count : medalCounts) {
+            System.out.printf("%-7d", count);
+        }
     }
-    
 }
+     
+    
+    
+
 
 
 
